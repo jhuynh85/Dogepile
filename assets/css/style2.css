@@ -1,0 +1,10 @@
+#searchBtn {
+	text-transform: lowercase;
+	background-color: #29b6f6;
+}
+
+#geoBtn {
+	text-transform: lowercase;
+	padding: 0 15px;
+	background-color: #29b6f6;
+}

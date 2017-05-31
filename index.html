@@ -3,16 +3,25 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <!-- Compiled and minified CSS for MATERIALIZE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    
+    <!-- Materialize icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <title></title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style1.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style2.css">
+
+    <title>Project 1</title>
 </head>
 
 <body>
@@ -20,48 +29,102 @@
 <!-- hidden on launch -->
     <header>
         <div id="headerContainer">
-            <h2 id="logo">Good Dog</h2>
+            <h2 id="logo">aarf!</h2>
             <div id="addressDisplay">Your Current Location<div>
         </div>
     </header>
 
 <!-- initial search -->
     <div id="searchContainer">
-        <h1>Good Dog</h1>
-        <form id="addressSearch">
-            <div class="input-group">
-                <input id="address-input" class="form-control" type="text" name="search" placeholder="Address">
-                <div class="input-group-addon btn btn-primary init" id="searchBtn">Fetch</div>
+        <h1 class="bounceInRight">aarf!</h1>
+
+        <form class="col s12" id="addressSearch">
+            <div class="row">
+                <div class="input-field col s9">
+                    <i class="material-icons prefix">pets</i>
+                    <input id="icon_prefix" type="text">
+                    <label for="icon_prefix">address or location</label>
+                </div>
+            
+                <div class="col s3">
+                    <button id="searchBtn" class="btn-large init waves-effect waves-light" type="submit" name="action">retrieve
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
             </div>
-            <button class="btn btn-primary init" type="submit" id="geoBtn">Use Your Location</button>
+
+            <div class="row">
+                <div class="col s12">
+                    <button class="btn-large init waves-effect waves-light" type="submit" id="geoBtn">use my location</button>
+                </div>
+            </div>
         </form>
     </div>
 
+<!-- container wrapper -->
+<div class="container">
+
 <!-- main page -->
     <div id="mainContainer">
-
         <div class="row"> 
-
-            <div class="col-md-6">
+            <div class="col s6">
                 <div id="map">
                     map
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col s6">
                 <div id="filter-results">
                     <ul>
-                        <li><input type="checkbox" id="filter-restaurants">Dog Friendly Restaurants</li>
-                        <li><input type="checkbox" id="filter-parks">Dog Parks</li>
-                        <li><input type="checkbox" id="filter-hotels">Dog Friendly Hotels</li>
+                        <li><input type="checkbox" id="filter-restaurants">eat</li>
+                        <li><input type="checkbox" id="filter-parks">play</li>
+                        <li><input type="checkbox" id="filter-hotels">stay</li>
                     </ul>
                 </div>
             </div>
 
+            <div class="col s12">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Marker</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Phone Number</th>
+                            <th>Get Dir Btn</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- populated by js example below-->
+                        <tr>
+                            <td><i class="material-icons">place</i></td>
+                            <td><img class="img-results" href="#"></td>
+                            <td>The Greatest Dog Park</td>
+                            <td>1234 Fido Way San Diego, CA 12345</td>
+                            <td>(123) 456-7890</td>
+                            <td><button class="dirBtn waves-effect waves-light btn">Lead the Way</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div> 
+</div> <!-- end container div -->
+
+<footer class="page-footer">
+  <div class="footer-copyright">
+    <!-- <div class="container"> -->
+    © 2017 Copyright Team TBD
+    <!-- <a class="grey-text text-lighten-4 right"></a> -->
+    <!-- </div> -->
+  </div>
+</footer>
 
 <script type="text/javascript" src="assets/js/app.js"></script>
+<script type=“text/javascript” src=“https://maps.googleapis.com/maps/api/js?key=AIzaSyBvUKChGjalgP1YNjJC66vq_tgbRuqa_Oc“></script>
+<script type=“text/javascript” src=“assets/js/map.js”></script>
+
 
 </body>
 
