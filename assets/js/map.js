@@ -3,12 +3,12 @@ var googleMapApiKey = "AIzaSyBvUKChGjalgP1YNjJC66vq_tgbRuqa_Oc";
 
 // firebase config
 var firebaseConfig = {
-  apiKey: "AIzaSyBmowDwF0bX2WjHALEwVbvfpbEvy-LnFpo",
-  authDomain: "project1-1496118174281.firebaseapp.com",
-  databaseURL: "https://project1-1496118174281.firebaseio.com",
-  projectId: "project1-1496118174281",
-  storageBucket: "project1-1496118174281.appspot.com",
-  messagingSenderId: "341531310506"
+  apiKey: "AIzaSyBvUKChGjalgP1YNjJC66vq_tgbRuqa_Oc",
+  authDomain: "ah829-9c19e.firebaseapp.com",
+  databaseURL: "https://ah829-9c19e.firebaseio.com",
+  projectId: "ah829-9c19e",
+  storageBucket: "ah829-9c19e.appspot.com",
+  messagingSenderId: "608911603931"
 };
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
