@@ -1,4 +1,38 @@
-var apiKey = "AIzaSyBvUKChGjalgP1YNjJC66vq_tgbRuqa_Oc";
+// google map config
+var googleMapApiKey = "AIzaSyBvUKChGjalgP1YNjJC66vq_tgbRuqa_Oc";
+
+// firebase config
+var firebaseConfig = {
+  apiKey: "AIzaSyBvUKChGjalgP1YNjJC66vq_tgbRuqa_Oc",
+  authDomain: "ah829-9c19e.firebaseapp.com",
+  databaseURL: "https://ah829-9c19e.firebaseio.com",
+  projectId: "ah829-9c19e",
+  storageBucket: "ah829-9c19e.appspot.com",
+  messagingSenderId: "608911603931"
+};
+firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
+
+/*
+INPUT
+a string of the JSON file name/path
+a string of the category
+
+OUTPUT
+N/A
+
+FUNCTIONALITY
+read a file and save data in firebase
+
+SAMPLE USAGE
+saveDataInFirebase("sample.json")
+*/
+function saveJSONFileInFirebase(filename) {
+  $.getJSON(filename, function(json) {
+    console.log(json); // this will show the info it in firebug console
+    database.ref(Object.keys(json)[0]).push(json);
+  });
+}
 
 /*
 INPUT
@@ -105,7 +139,7 @@ function getCoorUserInput(address) {
     console.log("Please enter a valid address.");
     return null;
   }
-  var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent(address) + "&key=" + apiKey;
+  var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent(address) + "&key=" + googleMapApiKey;
   var convertedCoor = {};
   $.ajax({
     url: queryURL,
